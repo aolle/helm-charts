@@ -1,0 +1,15 @@
+apiVersion: v2
+name: rhoai-operator
+description: A Helm chart to deploy the Red Hat OpenShift AI (RHOAI) Operator
+type: application
+version: 0.1.0
+appVersion: "2.25.0"
+
+keywords:
+  - rhoai
+  - openshift-ai
+  - operator
+  - ml
+  - ai
+
+home: https://www.redhat.com/es/products/ai/openshift-ai
