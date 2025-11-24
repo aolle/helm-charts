@@ -1,0 +1,13 @@
+apiVersion: v2
+name: servicemesh-operator
+description: A Helm chart to deploy the Red Hat OpenShift Service Mesh 2 Operator
+type: application
+version: 0.1.0
+appVersion: "2.6.11"
+
+keywords:
+  - openshift
+  - operator
+  - service-mesh
+
+home: https://www.redhat.com/en/technologies/cloud-computing/openshift/what-is-openshift-service-mesh
