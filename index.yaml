@@ -31,4 +31,22 @@ entries:
     urls:
     - https://github.com/aolle/helm-charts/releases/download/openshift-gitops-operator-0.1.0/openshift-gitops-operator-0.1.0.tgz
     version: 0.1.0
-generated: "2025-11-24T17:11:03.382989109Z"
+  rhoai-operator:
+  - apiVersion: v2
+    appVersion: 2.25.0
+    created: "2025-11-24T17:40:42.704183155Z"
+    description: A Helm chart to deploy the Red Hat OpenShift AI (RHOAI) Operator
+    digest: db18191ede774f8aaeb0397b217e5f86a9dc8b75233df1ca942cf89286f3587e
+    home: https://www.redhat.com/es/products/ai/openshift-ai
+    keywords:
+    - rhoai
+    - openshift-ai
+    - operator
+    - ml
+    - ai
+    name: rhoai-operator
+    type: application
+    urls:
+    - https://github.com/aolle/helm-charts/releases/download/rhoai-operator-0.1.0/rhoai-operator-0.1.0.tgz
+    version: 0.1.0
+generated: "2025-11-24T17:40:42.704192553Z"
