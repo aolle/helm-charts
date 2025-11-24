@@ -65,6 +65,22 @@ entries:
     urls:
     - https://github.com/aolle/helm-charts/releases/download/rhoai-operator-0.1.0/rhoai-operator-0.1.0.tgz
     version: 0.1.0
+  serverless-operator:
+  - apiVersion: v2
+    appVersion: 1.37.0
+    created: "2025-11-24T22:13:50.421943373Z"
+    description: A Helm chart to deploy the Red Hat OpenShift Serverless Operator
+    digest: 1fc97cd76e0ef642e9ca3414588219d1366b8b3b120d19686c4d853d023e103a
+    home: https://www.redhat.com/en/technologies/cloud-computing/openshift/serverless
+    keywords:
+    - openshift
+    - operator
+    - serverless
+    name: serverless-operator
+    type: application
+    urls:
+    - https://github.com/aolle/helm-charts/releases/download/serverless-operator-0.1.0/serverless-operator-0.1.0.tgz
+    version: 0.1.0
   servicemesh-operator:
   - apiVersion: v2
     appVersion: 2.6.11
@@ -81,4 +97,4 @@ entries:
     urls:
     - https://github.com/aolle/helm-charts/releases/download/servicemesh-operator-0.1.0/servicemesh-operator-0.1.0.tgz
     version: 0.1.0
-generated: "2025-11-24T19:01:52.447711916Z"
+generated: "2025-11-24T22:13:50.421949284Z"
