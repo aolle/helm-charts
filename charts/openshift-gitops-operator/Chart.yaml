@@ -1,0 +1,17 @@
+apiVersion: v2
+name: openshift-gitops-operator
+description: A Helm chart to deploy the OpenShift GitOps Operator
+type: application
+version: 0.1.0
+appVersion: "v1.18.1"
+
+keywords:
+  - argocd
+  - operator
+  - gitops
+  - openshift
+
+home: https://argo-cd.readthedocs.io/
+sources:
+  - https://github.com/argoproj/argo-cd
+  - https://github.com/operator-framework
