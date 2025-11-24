@@ -65,4 +65,20 @@ entries:
     urls:
     - https://github.com/aolle/helm-charts/releases/download/rhoai-operator-0.1.0/rhoai-operator-0.1.0.tgz
     version: 0.1.0
-generated: "2025-11-24T18:54:52.036838498Z"
+  servicemesh-operator:
+  - apiVersion: v2
+    appVersion: 2.6.11
+    created: "2025-11-24T19:01:52.44768191Z"
+    description: A Helm chart to deploy the Red Hat OpenShift Service Mesh 2 Operator
+    digest: 1d964bd9cba5640108c4836c74e0ae55989ba52a38edd1334f7164469b0d59c5
+    home: https://www.redhat.com/en/technologies/cloud-computing/openshift/what-is-openshift-service-mesh
+    keywords:
+    - openshift
+    - operator
+    - service-mesh
+    name: servicemesh-operator
+    type: application
+    urls:
+    - https://github.com/aolle/helm-charts/releases/download/servicemesh-operator-0.1.0/servicemesh-operator-0.1.0.tgz
+    version: 0.1.0
+generated: "2025-11-24T19:01:52.447711916Z"
