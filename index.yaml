@@ -1,5 +1,16 @@
 apiVersion: v1
 entries:
+  argo-cd:
+  - apiVersion: v2
+    created: "2025-11-24T17:11:03.382983729Z"
+    description: A Helm chart for Kubernetes to deploy ArgoCD using OpenShift GitOps
+    digest: 74fb8a3fdb35ef6af86926e9322e0bee2c03b1e57da5b4665c3252a73f1a9540
+    icon: https://raw.githubusercontent.com/argoproj/argo-cd/master/docs/assets/argo.png
+    name: argo-cd
+    type: application
+    urls:
+    - https://github.com/aolle/helm-charts/releases/download/argo-cd-0.1.10/argo-cd-0.1.10.tgz
+    version: 0.1.10
   openshift-gitops-operator:
   - apiVersion: v2
     appVersion: v1.18.1
@@ -20,4 +31,4 @@ entries:
     urls:
     - https://github.com/aolle/helm-charts/releases/download/openshift-gitops-operator-0.1.0/openshift-gitops-operator-0.1.0.tgz
     version: 0.1.0
-generated: "2025-11-24T16:27:44.848316867Z"
+generated: "2025-11-24T17:11:03.382989109Z"
