@@ -11,6 +11,27 @@ entries:
     urls:
     - https://github.com/aolle/helm-charts/releases/download/argo-cd-0.1.10/argo-cd-0.1.10.tgz
     version: 0.1.10
+  authorino-operator:
+  - apiVersion: v2
+    appVersion: 1.2.4
+    created: "2025-11-24T22:26:20.20488329Z"
+    description: A Helm chart to deploy the Authorino Operator
+    digest: 138e23e0004a61ca490f2c9619c07edf38168002a5e7cd9f7820059673632962
+    home: https://github.com/kuadrant/authorino
+    keywords:
+    - authorino
+    - operator
+    - security
+    - authentication
+    - openshift
+    - kubernetes
+    name: authorino-operator
+    sources:
+    - https://github.com/kuadrant/authorino-operator
+    type: application
+    urls:
+    - https://github.com/aolle/helm-charts/releases/download/authorino-operator-0.1.0/authorino-operator-0.1.0.tgz
+    version: 0.1.0
   openshift-gitops-operator:
   - apiVersion: v2
     appVersion: v1.18.1
@@ -97,4 +118,4 @@ entries:
     urls:
     - https://github.com/aolle/helm-charts/releases/download/servicemesh-operator-0.1.0/servicemesh-operator-0.1.0.tgz
     version: 0.1.0
-generated: "2025-11-24T22:13:50.421949284Z"
+generated: "2025-11-24T22:26:20.20488867Z"
