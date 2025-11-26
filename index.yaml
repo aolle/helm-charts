@@ -32,6 +32,27 @@ entries:
     urls:
     - https://github.com/aolle/helm-charts/releases/download/authorino-operator-0.1.0/authorino-operator-0.1.0.tgz
     version: 0.1.0
+  gitea-operator:
+  - apiVersion: v2
+    appVersion: 2.1.0
+    created: "2025-11-26T17:43:12.385074262Z"
+    description: A Helm chart to deploy the Gitea Operator (RHPDS)
+    digest: 62b08e33152851049357b4aff73943554bc31ff1f4aada990c6b8ec4ee444de3
+    keywords:
+    - gitea
+    - operator
+    - rhpds
+    - git
+    - scm
+    - devtools
+    - openshift
+    name: gitea-operator
+    sources:
+    - https://github.com/rhpds/gitea-operator
+    type: application
+    urls:
+    - https://github.com/aolle/helm-charts/releases/download/gitea-operator-0.1.0/gitea-operator-0.1.0.tgz
+    version: 0.1.0
   openshift-gitops-operator:
   - apiVersion: v2
     appVersion: v1.18.1
@@ -118,4 +139,4 @@ entries:
     urls:
     - https://github.com/aolle/helm-charts/releases/download/servicemesh-operator-0.1.0/servicemesh-operator-0.1.0.tgz
     version: 0.1.0
-generated: "2025-11-24T22:26:20.20488867Z"
+generated: "2025-11-26T17:43:12.385082387Z"
