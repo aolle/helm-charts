@@ -53,6 +53,17 @@ entries:
     urls:
     - https://github.com/aolle/helm-charts/releases/download/gitea-operator-0.1.0/gitea-operator-0.1.0.tgz
     version: 0.1.0
+  minio:
+  - apiVersion: v2
+    appVersion: 2025-09-07T16-13-09Z
+    created: "2025-11-27T15:47:19.041845625Z"
+    description: A generic and parametrizable MinIO chart for Kubernetes/OpenShift
+    digest: cf79383b0b75cc69ec9cdc3e232a6a401c5a68d049ac06d748954b560db46a84
+    name: minio
+    type: application
+    urls:
+    - https://github.com/aolle/helm-charts/releases/download/minio-0.1.0/minio-0.1.0.tgz
+    version: 0.1.0
   openshift-gitops-operator:
   - apiVersion: v2
     appVersion: v1.18.1
@@ -139,4 +150,4 @@ entries:
     urls:
     - https://github.com/aolle/helm-charts/releases/download/servicemesh-operator-0.1.0/servicemesh-operator-0.1.0.tgz
     version: 0.1.0
-generated: "2025-11-26T17:43:12.385082387Z"
+generated: "2025-11-27T15:47:19.04185372Z"
