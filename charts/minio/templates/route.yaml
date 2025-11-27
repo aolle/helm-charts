@@ -1,0 +1,29 @@
+{{- if .Values.openshift.enabled }}
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: {{ include "minio.fullname" . }}-api
+spec:
+  to:
+    kind: Service
+    name: {{ include "minio.fullname" . }}
+  port:
+    targetPort: api
+  tls:
+    termination: {{ .Values.openshift.tls.termination }}
+    insecureEdgeTerminationPolicy: {{ .Values.openshift.tls.insecurePolicy }}
+---
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: {{ include "minio.fullname" . }}-console
+spec:
+  to:
+    kind: Service
+    name: {{ include "minio.fullname" . }}
+  port:
+    targetPort: console
+  tls:
+    termination: {{ .Values.openshift.tls.termination }}
+    insecureEdgeTerminationPolicy: {{ .Values.openshift.tls.insecurePolicy }}
+{{- end }}
