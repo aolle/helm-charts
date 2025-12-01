@@ -32,6 +32,17 @@ entries:
     urls:
     - https://github.com/aolle/helm-charts/releases/download/authorino-operator-0.1.0/authorino-operator-0.1.0.tgz
     version: 0.1.0
+  gitea:
+  - apiVersion: v2
+    appVersion: 1.24.0
+    created: "2025-12-01T23:11:34.856294692Z"
+    description: Generic Gitea deployment using Gitea CRD
+    digest: db37361f4a9582374bd8604d11d6f0eed2d929f848a095cce5052bf2b8af8acc
+    name: gitea
+    type: application
+    urls:
+    - https://github.com/aolle/helm-charts/releases/download/gitea-0.1.0/gitea-0.1.0.tgz
+    version: 0.1.0
   gitea-operator:
   - apiVersion: v2
     appVersion: 2.1.0
@@ -150,4 +161,4 @@ entries:
     urls:
     - https://github.com/aolle/helm-charts/releases/download/servicemesh-operator-0.1.0/servicemesh-operator-0.1.0.tgz
     version: 0.1.0
-generated: "2025-11-27T15:47:19.04185372Z"
+generated: "2025-12-01T23:11:34.856301885Z"
