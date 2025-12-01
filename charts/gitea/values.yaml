@@ -1,0 +1,22 @@
+gitea:
+  imageTag: "1.24.0"
+  volumeSize: 4Gi
+  ssl: true
+  postgresqlVolumeSize: 20Gi
+
+admin:
+  user: admin
+  email: admin@example.com
+  password: "" 
+  existingSecret: ""
+
+users:
+  enabled: true
+  number: 1
+  format: "user%d"
+  password: ""
+  existingSecret: ""
+
+repositories:
+  migrate: true
+  list: []

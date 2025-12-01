@@ -1,0 +1,36 @@
+apiVersion: pfe.rhpds.com/v1
+kind: Gitea
+metadata:
+  name: {{ include "gitea.fullname" . }}
+spec:
+  giteaImageTag: {{ .Values.gitea.imageTag }}
+  giteaVolumeSize: {{ .Values.gitea.volumeSize }}
+  giteaSsl: {{ .Values.gitea.ssl }}
+  postgresqlVolumeSize: {{ .Values.gitea.postgresqlVolumeSize }}
+  giteaAdminUser: {{ .Values.admin.user }}
+  giteaAdminEmail: {{ .Values.admin.email }}
+
+  {{- if .Values.admin.existingSecret }}
+  giteaAdminPasswordSecretName: {{ .Values.admin.existingSecret }}
+  {{- else }}
+  giteaAdminPasswordSecretName: {{ include "gitea.fullname" . }}-admin
+  {{- end }}
+
+  giteaCreateUsers: {{ .Values.users.enabled }}
+  giteaUserNumber: {{ .Values.users.number }}
+  giteaGenerateUserFormat: "{{ .Values.users.format }}"
+
+  {{- if .Values.users.existingSecret }}
+  giteaUserPasswordSecretName: {{ .Values.users.existingSecret }}
+  {{- else}}
+  giteaUserPasswordSecretName: {{ include "gitea.fullname" . }}-users
+  {{- end }}
+
+  giteaMigrateRepositories: {{ .Values.repositories.migrate }}
+
+  giteaRepositoriesList:
+    {{- range .Values.repositories.list }}
+    - repo: {{ .repo }}
+      name: {{ .name }}
+      private: {{ .private }}
+    {{- end }}
