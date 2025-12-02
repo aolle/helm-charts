@@ -1,0 +1,35 @@
+apiVersion: modelregistry.opendatahub.io/v1beta1
+kind: ModelRegistry
+metadata:
+  annotations:
+    openshift.io/description: {{ include "model-registry.fullname" . | quote }}
+    openshift.io/display-name: {{ include "model-registry.fullname" . | quote }}
+  name: {{ include "model-registry.fullname" . }}
+  namespace: {{ .Values.registryNamespace }}
+  finalizers:
+    - modelregistry.opendatahub.io/finalizer
+spec:
+  grpc:
+    port: {{ .Values.modelregistry.grpc.port }}
+  mysql:
+    database: {{ .Values.database.name | quote }}
+    host: '{{- if .Values.database.host }}{{ .Values.database.host }}{{- else }}{{ include "model-registry.fullname" . }}-db.{{ default .Release.Namespace .Values.dbNamespace }}.svc.cluster.local{{- end }}'
+    passwordSecret:
+      key: "database-password"
+      name: {{ include "model-registry.fullname" . }}-registry-db
+    port: {{ .Values.database.port }}
+    username: {{ .Values.database.user }}
+  oauthProxy:
+    port: {{ .Values.modelregistry.oauthProxy.port }}
+    routePort: {{ .Values.modelregistry.oauthProxy.routePort }}
+    serviceRoute: {{ .Values.modelregistry.oauthProxy.serviceRoute }}
+  rest:
+    port: {{ .Values.modelregistry.rest.port }}
+    resources:
+      limits:
+        cpu: {{ .Values.modelregistry.rest.resources.limits.cpu }}
+        memory: {{ .Values.modelregistry.rest.resources.limits.memory }}
+      requests:
+        cpu: {{ .Values.modelregistry.rest.resources.requests.cpu }}
+        memory: {{ .Values.modelregistry.rest.resources.requests.memory }}
+    serviceRoute: {{ .Values.modelregistry.rest.serviceRoute }}

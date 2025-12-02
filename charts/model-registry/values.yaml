@@ -1,0 +1,35 @@
+fullnameOverride: ""
+
+registryNamespace: "rhoai-model-registries"
+dbNamespace: "rhoai-model-registries"
+
+database:
+  host: ""
+  port: 3306
+  name: "metadb"
+  user: "db"
+  password: "db"
+  rootPassword: "db"
+  allowEmptyPassword: "true"
+  volumeSize: "10Gi"
+  image: "mysql:8.0.3"
+  imagePullPolicy: IfNotPresent
+  resources: {}
+
+modelregistry:
+  grpc:
+    port: 9090
+  rest:
+    port: 8080
+    serviceRoute: "disabled"
+    resources:
+      limits:
+        cpu: "100m"
+        memory: "256Mi"
+      requests:
+        cpu: "100m"
+        memory: "256Mi"
+  oauthProxy:
+    port: 8443
+    routePort: 443
+    serviceRoute: "enabled"

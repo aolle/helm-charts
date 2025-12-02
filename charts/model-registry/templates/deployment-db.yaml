@@ -1,0 +1,70 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "model-registry.fullname" . }}-db
+  labels:
+    {{- include "model-registry.labels" . | nindent 4 }}
+    component: db
+  namespace: {{ .Values.dbNamespace }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      {{- include "model-registry.selectorLabels" . | nindent 6 }}
+      component: db
+  template:
+    metadata:
+      labels:
+        {{- include "model-registry.selectorLabels" . | nindent 8 }}
+        component: db
+      annotations:
+        sidecar.istio.io/inject: 'false'
+    spec:
+      volumes:
+        - name: metadata-mysql
+          persistentVolumeClaim:
+            claimName: {{ include "model-registry.fullname" . }}-metadata-mysql
+      containers:
+        - name: db-container
+          image: "{{ .Values.database.image }}"
+          imagePullPolicy: {{ .Values.database.imagePullPolicy }}
+          resources: {{- toYaml .Values.database.resources | nindent 12 }}
+          ports:
+            - name: dbapi
+              containerPort: {{ .Values.database.port }}
+              protocol: TCP
+          args:
+            - '--datadir'
+            - /var/lib/mysql/datadir
+            - '--default-authentication-plugin=mysql_native_password'
+          volumeMounts:
+            - name: metadata-mysql
+              mountPath: /var/lib/mysql
+          env:
+            - name: MYSQL_DATABASE
+              value: {{ .Values.database.name | quote }}
+            - name: MYSQL_USER
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "model-registry.fullname" . }}-db-secrets
+                  key: MYSQL_USER
+            - name: MYSQL_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "model-registry.fullname" . }}-db-secrets
+                  key: MYSQL_PASSWORD
+            - name: MYSQL_ROOT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "model-registry.fullname" . }}-db-secrets
+                  key: MYSQL_ROOT_PASSWORD
+            - name: MYSQL_ALLOW_EMPTY_PASSWORD
+              value: {{ .Values.database.allowEmptyPassword | quote }}
+          readinessProbe:
+            exec:
+              command:
+                - /bin/bash
+                - -c
+                - mysql -uroot -p$MYSQL_ROOT_PASSWORD -e 'SELECT 1'
+            initialDelaySeconds: 10
+            periodSeconds: 5
