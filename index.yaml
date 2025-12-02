@@ -75,6 +75,17 @@ entries:
     urls:
     - https://github.com/aolle/helm-charts/releases/download/minio-0.1.0/minio-0.1.0.tgz
     version: 0.1.0
+  model-registry:
+  - apiVersion: v2
+    appVersion: 2.25.0
+    created: "2025-12-02T23:24:46.678239469Z"
+    description: Model Registry CRD deployment packaged as a Helm chart
+    digest: 5000c996e37a3726908b935b484b2156cc903126248e1a81a10926a0fab40b57
+    name: model-registry
+    type: application
+    urls:
+    - https://github.com/aolle/helm-charts/releases/download/model-registry-0.1.0/model-registry-0.1.0.tgz
+    version: 0.1.0
   openshift-gitops-operator:
   - apiVersion: v2
     appVersion: v1.18.1
@@ -161,4 +172,4 @@ entries:
     urls:
     - https://github.com/aolle/helm-charts/releases/download/servicemesh-operator-0.1.0/servicemesh-operator-0.1.0.tgz
     version: 0.1.0
-generated: "2025-12-01T23:11:34.856301885Z"
+generated: "2025-12-02T23:24:46.678246101Z"
